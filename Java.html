@@ -1,0 +1,28 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+/** Google script calls work by calling fun, followed by the success and failure handlers, 
+  * followed by the method call to the google script file. 
+  */
+$(function() {
+    // Call the server here to retrieve any information needed to build the page.
+    google.script.run
+       .withSuccessHandler(function(contents) {
+            // Respond to success conditions here.
+            updateDisplay(contents);
+          })
+       .withFailureHandler(function() {
+            // Respond to failure conditions here.
+            $('#main-heading').text("Fail");
+            $('#results').text("Something went wrong, I'm not the best programmer :/");
+          })
+       .countFiles(); // actual google script call here 
+  });
+
+/** 
+  * The actual function which manipulates the data retrieved from the google script server call. 
+  */ 
+function updateDisplay(contents) {
+    $('#main-heading').text("Successful!");
+    $('#results').append('<div>' + contents + '</div>');
+}
+</script>
