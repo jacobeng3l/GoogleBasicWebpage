@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- ID Tags are useful for references in javascript files --> 
+  <h1 id="main-heading">Loading...</h1>
+    <base target="_top">
+  </head>
+  <body bgcolor="#E6E6FA"> 
+  This program counts all files in your google drive. <br> 
+  The toal number of files in your google drive is: 
+  </body> 
+  <body>
+  <div class="block result-display" id="results"> </div>
+  <!-- invokes the javascript file for most of the heavy lifting --> 
+  <?!= HtmlService.createHtmlOutputFromFile('Java').getContent(); ?>
+  </body>
+</html>
