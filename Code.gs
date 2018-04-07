@@ -36,7 +36,7 @@ function countFiles() {
   while (folders.hasNext())
     totes = explore(folders.next(), totes); 
   
-  // Finish
+  // Finish 
   return totes;
 }
 
